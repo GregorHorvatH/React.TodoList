@@ -1,0 +1,47 @@
+@item-background-color: #feff78;
+@done-background-color: #c8ffb3;
+
+.todo-editor {
+  padding: 20px 10px;
+
+  &-textarea {
+    resize: none;
+    margin-bottom: 20px;
+  }
+}
+
+.todo-item {
+  background-color: @item-background-color;
+  word-wrap: break-word;
+  cursor: default;
+  min-height: 20px;
+
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: none;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &.done {
+    background-color: @done-background-color;
+    text-decoration: line-through;
+  }
+
+  &:hover {
+    background-color: darken(@item-background-color, 10%);
+
+    .todo-item-close {
+      display: block;
+    }
+
+    &.done {
+      background-color: darken(@done-background-color, 10%);;
+    }
+  }
+}
+
